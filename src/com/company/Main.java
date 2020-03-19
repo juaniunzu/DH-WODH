@@ -32,6 +32,9 @@ public class Main {
         olaf.lucharConCriatura(blueBuff);
         nami.lucharConCriatura(elder);
 
+        nashor.lanzarFuego();
+        elder.volar();
+
 
 
 
