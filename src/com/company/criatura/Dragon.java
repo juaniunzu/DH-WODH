@@ -7,11 +7,11 @@ public class Dragon extends Criatura {
   }
 
   public void volar(){
-    // TODO: 19/03/2020
+    System.out.println(this.getNombre() + " se eleva en vuelo");
   }
 
   public void lanzarFuego(){
-    // TODO: 19/03/2020
+    System.out.println("Cuidado con las llamas!");
   }
 
 }

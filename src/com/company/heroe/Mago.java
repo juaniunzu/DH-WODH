@@ -9,11 +9,28 @@ public class Mago extends Heroe {
   }
 
   public void resucitarGuerrero(Guerrero unGuerrero){
-    // TODO: 19/03/2020
+    if (unGuerrero.puedeLuchar()){
+      System.out.println("El guerrero ya está vivo, no es necesario resucitarlo");
+    } else {
+      unGuerrero.setNivelVida(500.0);
+      System.out.println(this.getNombre() + " revive al guerrero " + unGuerrero.getNombre());
+    }
   }
 
   @Override
   public void lucharConCriatura(Criatura unaCriatura) {
-    // TODO: 19/03/2020
+
+    if(unaCriatura.getNivelAtaque() < this.nivelExperiencia){
+      this.nivelExperiencia += 2;
+      System.out.println("El mago " + this.getNombre() + " ganó, su experiencia sube a " + this.nivelExperiencia);
+    } else {
+      this.nivelExperiencia--;
+      System.out.println("El mago " + this.getNombre() + " perdió, su experiencia baja a " + this.nivelExperiencia);
+    }
+
+
+
+
+
   }
 }

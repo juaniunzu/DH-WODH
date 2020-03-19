@@ -15,22 +15,26 @@ public class Guerrero extends Heroe {
   public void lucharConCriatura(Criatura unaCriatura) {
 
     if(!puedeLuchar()){
-      System.out.println("El guerrero no puede luchar y deberá esperar su resurreción");
+      System.out.println("El guerrero " + this.getNombre() + " no puede luchar y deberá esperar su resurreción");
     }
 
     if(puedeLuchar() && unaCriatura.getNivelAtaque() < this.nivelExperiencia){
       this.nivelExperiencia++;
-      System.out.println("El guerrero " + this.getNombre() + " ganó");
+      System.out.println("El guerrero " + this.getNombre() + " ganó. Su experiencia sube a " + this.nivelExperiencia);
     }
 
     if(puedeLuchar() && unaCriatura.getNivelAtaque() >= this.nivelExperiencia){
       this.nivelVida = 0.0;
       System.out.println("El guerrero " + this.getNombre() + " perdió y quedó sin vida");
     }
-    
+
   }
 
-  private Boolean puedeLuchar(){
+  protected Boolean puedeLuchar(){
     return(this.nivelVida > 0);
+  }
+
+  protected void setNivelVida(Double nivelVida) {
+    this.nivelVida = nivelVida;
   }
 }
